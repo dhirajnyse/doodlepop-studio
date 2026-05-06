@@ -329,7 +329,8 @@ input[type="range"]:focus-visible {
 
 .canvas-zone {
   display: grid;
-  grid-template-rows: minmax(0, 1fr);
+  grid-template-rows: auto;
+  align-content: start;
   gap: 14px;
   min-width: 0;
   min-height: 0;
@@ -453,7 +454,8 @@ input[type="range"]:focus-visible {
 .canvas-frame {
   position: relative;
   display: grid;
-  place-items: start center;
+  place-items: center;
+  align-self: start;
   min-width: 0;
   min-height: 0;
   padding: clamp(10px, 1.4vw, 18px);
@@ -479,10 +481,10 @@ input[type="range"]:focus-visible {
 
 #paintCanvas {
   position: relative;
-  width: min(100%, calc((100vh - 210px) * 1.56));
-  width: min(100%, calc((100svh - 210px) * 1.56));
-  max-height: calc(100vh - 210px);
-  max-height: calc(100svh - 210px);
+  width: min(100%, calc((100vh - 174px) * 1.56));
+  width: min(100%, calc((100svh - 174px) * 1.56));
+  max-height: calc(100vh - 174px);
+  max-height: calc(100svh - 174px);
   aspect-ratio: 1280 / 820;
   border: 1px solid rgba(37, 37, 45, 0.16);
   border-radius: 18px;

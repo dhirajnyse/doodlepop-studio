@@ -339,6 +339,10 @@ function drawTemplate(template) {
   if (template === "rocket") drawRocketTemplate();
   if (template === "castle") drawCastleTemplate();
   if (template === "sea") drawSeaTemplate();
+  if (template === "dino") drawDinoTemplate();
+  if (template === "garden") drawGardenTemplate();
+  if (template === "robot") drawRobotTemplate();
+  if (template === "butterfly") drawButterflyTemplate();
 
   ctx.restore();
   pushHistory();
@@ -503,6 +507,257 @@ function drawSeaTemplate() {
   ctx.bezierCurveTo(566, 688, 704, 796, 832, 742);
   ctx.bezierCurveTo(956, 688, 1054, 796, 1200, 742);
   ctx.stroke();
+}
+
+function drawDinoTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  ctx.beginPath();
+  ctx.moveTo(242, 520);
+  ctx.bezierCurveTo(300, 220, 616, 170, 844, 334);
+  ctx.bezierCurveTo(1032, 466, 878, 670, 596, 632);
+  ctx.bezierCurveTo(470, 615, 354, 568, 242, 520);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(840, 334);
+  ctx.bezierCurveTo(916, 222, 1018, 212, 1084, 310);
+  ctx.bezierCurveTo(1042, 354, 948, 384, 840, 334);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(253, 515);
+  ctx.lineTo(104, 648);
+  ctx.lineTo(276, 626);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  for (const [x, y] of [
+    [378, 250],
+    [484, 206],
+    [602, 198],
+    [718, 230],
+  ]) {
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + 44, y - 104);
+    ctx.lineTo(x + 90, y + 8);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  ctx.beginPath();
+  ctx.arc(968, 300, 20, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+
+  for (const x of [410, 668]) {
+    ctx.beginPath();
+    ctx.moveTo(x, 610);
+    ctx.lineTo(x - 26, 750);
+    ctx.lineTo(x + 58, 750);
+    ctx.lineTo(x + 42, 620);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  drawCloud(146, 162, 0.78);
+  drawSun(1078, 110, 42);
+}
+
+function drawGardenTemplate() {
+  templateStroke(7);
+  ctx.fillStyle = "#ffffff";
+
+  drawSun(1060, 118, 44);
+  drawCloud(142, 148, 0.82);
+
+  for (const [x, y, scale] of [
+    [318, 416, 1.06],
+    [628, 362, 1.2],
+    [948, 438, 0.98],
+  ]) {
+    drawFlowerOutline(x, y, scale);
+  }
+
+  templateStroke(8);
+  for (const [x, y] of [
+    [208, 650],
+    [404, 694],
+    [786, 674],
+    [1052, 646],
+  ]) {
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.bezierCurveTo(x - 32, y - 92, x + 36, y - 128, x, y - 202);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x, y - 96);
+    ctx.bezierCurveTo(x - 74, y - 144, x - 116, y - 94, x - 74, y - 44);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x, y - 112);
+    ctx.bezierCurveTo(x + 78, y - 166, x + 120, y - 102, x + 70, y - 54);
+    ctx.stroke();
+  }
+
+  ctx.beginPath();
+  ctx.moveTo(70, 724);
+  ctx.bezierCurveTo(236, 682, 348, 772, 516, 724);
+  ctx.bezierCurveTo(674, 682, 812, 772, 970, 724);
+  ctx.bezierCurveTo(1062, 696, 1146, 710, 1210, 730);
+  ctx.stroke();
+}
+
+function drawRobotTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  ctx.beginPath();
+  ctx.roundRect?.(380, 218, 520, 392, 42);
+  if (!ctx.roundRect) roundedRect(380, 218, 520, 392, 42);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(640, 218);
+  ctx.lineTo(640, 110);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(640, 88, 28, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+
+  for (const x of [535, 745]) {
+    ctx.beginPath();
+    ctx.arc(x, 370, 46, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(x, 370, 16, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  ctx.beginPath();
+  ctx.moveTo(532, 506);
+  ctx.quadraticCurveTo(640, 572, 748, 506);
+  ctx.stroke();
+
+  for (const [x1, x2] of [
+    [380, 226],
+    [900, 1054],
+  ]) {
+    ctx.beginPath();
+    ctx.moveTo(x1, 356);
+    ctx.lineTo(x2, 306);
+    ctx.lineTo(x2 + (x2 > x1 ? 36 : -36), 396);
+    ctx.lineTo(x1, 438);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  for (const x of [510, 718]) {
+    ctx.beginPath();
+    ctx.moveTo(x, 610);
+    ctx.lineTo(x - 52, 746);
+    ctx.lineTo(x + 88, 746);
+    ctx.lineTo(x + 44, 610);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  drawStarOutline(206, 204, 42);
+  drawStarOutline(1064, 646, 38);
+}
+
+function drawButterflyTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  ctx.beginPath();
+  ctx.moveTo(610, 370);
+  ctx.bezierCurveTo(356, 20, 112, 246, 254, 492);
+  ctx.bezierCurveTo(354, 666, 554, 560, 610, 370);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(670, 370);
+  ctx.bezierCurveTo(924, 20, 1168, 246, 1026, 492);
+  ctx.bezierCurveTo(926, 666, 726, 560, 670, 370);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.ellipse(640, 470, 46, 198, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(640, 214, 54, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(610, 174);
+  ctx.bezierCurveTo(542, 82, 470, 110, 442, 48);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(670, 174);
+  ctx.bezierCurveTo(738, 82, 810, 110, 838, 48);
+  ctx.stroke();
+
+  for (const [x, y, radius] of [
+    [392, 360, 46],
+    [486, 484, 34],
+    [888, 360, 46],
+    [794, 484, 34],
+  ]) {
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  drawFlowerOutline(174, 676, 0.76);
+  drawFlowerOutline(1106, 676, 0.76);
+}
+
+function drawFlowerOutline(x, y, scale) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.scale(scale, scale);
+  templateStroke(7);
+  ctx.fillStyle = "#ffffff";
+  for (let i = 0; i < 6; i += 1) {
+    const angle = (Math.PI * 2 * i) / 6;
+    ctx.beginPath();
+    ctx.arc(Math.cos(angle) * 52, Math.sin(angle) * 52, 36, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+  }
+  ctx.beginPath();
+  ctx.arc(0, 0, 34, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(0, 86);
+  ctx.lineTo(0, 220);
+  ctx.stroke();
+  ctx.restore();
 }
 
 function drawCloud(x, y, scale) {

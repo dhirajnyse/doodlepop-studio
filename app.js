@@ -343,6 +343,14 @@ function drawTemplate(template) {
   if (template === "garden") drawGardenTemplate();
   if (template === "robot") drawRobotTemplate();
   if (template === "butterfly") drawButterflyTemplate();
+  if (template === "unicorn") drawUnicornTemplate();
+  if (template === "car") drawCarTemplate();
+  if (template === "plane") drawPlaneTemplate();
+  if (template === "cupcake") drawCupcakeTemplate();
+  if (template === "house") drawHouseTemplate();
+  if (template === "rainbow") drawRainbowTemplate();
+  if (template === "train") drawTrainTemplate();
+  if (template === "moon") drawMoonTemplate();
 
   ctx.restore();
   pushHistory();
@@ -734,6 +742,363 @@ function drawButterflyTemplate() {
 
   drawFlowerOutline(174, 676, 0.76);
   drawFlowerOutline(1106, 676, 0.76);
+}
+
+function drawUnicornTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  ctx.beginPath();
+  ctx.moveTo(280, 492);
+  ctx.bezierCurveTo(350, 282, 680, 248, 888, 390);
+  ctx.bezierCurveTo(1044, 496, 898, 658, 616, 626);
+  ctx.bezierCurveTo(468, 610, 360, 558, 280, 492);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(836, 386);
+  ctx.bezierCurveTo(878, 248, 1012, 232, 1088, 338);
+  ctx.bezierCurveTo(1028, 390, 936, 412, 836, 386);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(934, 268);
+  ctx.lineTo(976, 96);
+  ctx.lineTo(1030, 288);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(984, 336, 18, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(318, 482);
+  ctx.lineTo(146, 642);
+  ctx.lineTo(360, 604);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  for (const x of [430, 686]) {
+    ctx.beginPath();
+    ctx.moveTo(x, 612);
+    ctx.lineTo(x - 38, 754);
+    ctx.lineTo(x + 56, 754);
+    ctx.lineTo(x + 36, 620);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  templateStroke(7);
+  for (let i = 0; i < 5; i += 1) {
+    ctx.beginPath();
+    ctx.moveTo(780 - i * 38, 286 + i * 18);
+    ctx.bezierCurveTo(730 - i * 22, 190 + i * 30, 600 - i * 34, 234 + i * 26, 560 - i * 38, 340 + i * 18);
+    ctx.stroke();
+  }
+
+  drawStarOutline(190, 180, 42);
+  drawCloud(1004, 612, 0.66);
+}
+
+function drawCarTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  ctx.beginPath();
+  ctx.moveTo(190, 486);
+  ctx.lineTo(274, 314);
+  ctx.lineTo(786, 314);
+  ctx.lineTo(946, 486);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(126, 486);
+  ctx.lineTo(1066, 486);
+  ctx.lineTo(1066, 608);
+  ctx.lineTo(126, 608);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(352, 342);
+  ctx.lineTo(500, 342);
+  ctx.lineTo(500, 486);
+  ctx.lineTo(280, 486);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(540, 342);
+  ctx.lineTo(760, 342);
+  ctx.lineTo(890, 486);
+  ctx.lineTo(540, 486);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  for (const x of [294, 872]) {
+    ctx.beginPath();
+    ctx.arc(x, 612, 72, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(x, 612, 28, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  drawSun(1060, 130, 42);
+  templateStroke(7);
+  ctx.beginPath();
+  ctx.moveTo(90, 714);
+  ctx.lineTo(1190, 714);
+  ctx.stroke();
+}
+
+function drawPlaneTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  ctx.beginPath();
+  ctx.moveTo(118, 432);
+  ctx.lineTo(1136, 132);
+  ctx.lineTo(812, 724);
+  ctx.lineTo(596, 498);
+  ctx.lineTo(298, 714);
+  ctx.lineTo(420, 468);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(420, 468);
+  ctx.lineTo(1136, 132);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(596, 498);
+  ctx.lineTo(812, 724);
+  ctx.stroke();
+
+  drawCloud(158, 138, 0.78);
+  drawCloud(924, 560, 0.72);
+  drawStarOutline(1058, 252, 34);
+}
+
+function drawCupcakeTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  ctx.beginPath();
+  ctx.moveTo(360, 380);
+  ctx.bezierCurveTo(292, 198, 480, 132, 594, 238);
+  ctx.bezierCurveTo(710, 78, 954, 214, 864, 382);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(636, 170, 34, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(322, 396);
+  ctx.lineTo(928, 396);
+  ctx.lineTo(824, 724);
+  ctx.lineTo(426, 724);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  for (const x of [430, 522, 614, 706, 798]) {
+    ctx.beginPath();
+    ctx.moveTo(x, 426);
+    ctx.lineTo(x + 22, 696);
+    ctx.stroke();
+  }
+
+  for (const [x, y] of [
+    [466, 286],
+    [546, 326],
+    [710, 288],
+    [794, 340],
+  ]) {
+    ctx.beginPath();
+    ctx.arc(x, y, 12, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  drawStarOutline(210, 206, 34);
+  drawStarOutline(1040, 592, 38);
+}
+
+function drawHouseTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  ctx.beginPath();
+  ctx.moveTo(206, 360);
+  ctx.lineTo(640, 112);
+  ctx.lineTo(1074, 360);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.rect(292, 356, 696, 374);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.rect(546, 526, 188, 204);
+  ctx.fill();
+  ctx.stroke();
+
+  for (const [x, y] of [
+    [404, 444],
+    [798, 444],
+  ]) {
+    ctx.beginPath();
+    ctx.rect(x, y, 118, 96);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x + 59, y);
+    ctx.lineTo(x + 59, y + 96);
+    ctx.moveTo(x, y + 48);
+    ctx.lineTo(x + 118, y + 48);
+    ctx.stroke();
+  }
+
+  ctx.beginPath();
+  ctx.rect(840, 146, 92, 128);
+  ctx.fill();
+  ctx.stroke();
+
+  drawCloud(142, 132, 0.76);
+  drawSun(1112, 126, 42);
+  drawFlowerOutline(172, 640, 0.55);
+  drawFlowerOutline(1096, 640, 0.55);
+}
+
+function drawRainbowTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  const centerX = 640;
+  const baseY = 676;
+  for (const radius of [432, 346, 260, 174]) {
+    ctx.beginPath();
+    ctx.arc(centerX, baseY, radius, Math.PI, Math.PI * 2);
+    ctx.stroke();
+  }
+
+  ctx.beginPath();
+  ctx.moveTo(208, 676);
+  ctx.lineTo(208, 742);
+  ctx.lineTo(1072, 742);
+  ctx.lineTo(1072, 676);
+  ctx.stroke();
+
+  drawCloud(174, 622, 1.0);
+  drawCloud(970, 622, 1.0);
+  drawSun(1060, 142, 42);
+  drawStarOutline(242, 188, 34);
+}
+
+function drawTrainTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  ctx.beginPath();
+  ctx.rect(126, 414, 434, 170);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.rect(560, 474, 232, 110);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.rect(792, 474, 232, 110);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.rect(206, 250, 170, 164);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.rect(396, 328, 92, 86);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.rect(176, 190, 230, 60);
+  ctx.fill();
+  ctx.stroke();
+
+  for (const x of [214, 424, 650, 882]) {
+    ctx.beginPath();
+    ctx.arc(x, 604, 48, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(x, 604, 18, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  drawCloud(778, 164, 0.76);
+  templateStroke(7);
+  ctx.beginPath();
+  ctx.moveTo(80, 686);
+  ctx.lineTo(1180, 686);
+  ctx.stroke();
+}
+
+function drawMoonTemplate() {
+  templateStroke(8);
+  ctx.fillStyle = "#ffffff";
+
+  ctx.beginPath();
+  ctx.moveTo(718, 126);
+  ctx.bezierCurveTo(494, 218, 442, 486, 626, 638);
+  ctx.bezierCurveTo(734, 728, 890, 714, 1000, 612);
+  ctx.bezierCurveTo(790, 628, 640, 460, 672, 268);
+  ctx.bezierCurveTo(684, 198, 704, 152, 718, 126);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+
+  for (const [x, y, radius] of [
+    [274, 186, 38],
+    [336, 488, 50],
+    [1030, 214, 34],
+    [976, 636, 42],
+  ]) {
+    drawStarOutline(x, y, radius);
+  }
+
+  drawCloud(140, 650, 0.82);
+  drawCloud(178, 292, 0.62);
 }
 
 function drawFlowerOutline(x, y, scale) {
